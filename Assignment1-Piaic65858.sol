@@ -60,6 +60,21 @@ contract MotorCycle is ParentVehicle{
 /*Step3 Now create smart contracts for “Alto Mehran, “ Hino, Yamaha, that may inherit
 the relevant smart contract(s) as in step 2.*/
 
+
+contract AltoMehran is cars{
+    
+}
+
+
+contract Hino is Truck{
+    
+}
+
+
+contract Yamaha is MotorCycle{
+    
+}
+
 /*Step4 Create 3 Service Stations for each vehicle type, with the same
 function “vehicleService that takes the address of the deployed
 contracts of step 3, in the “Vehicle” variable to call the service
@@ -67,25 +82,9 @@ function*/
 
 
 
-contract AltoMehran is cars {
+contract workshop is cars {
     function vehicleService(address add) public pure returns (string memory){
-        AltoMehran a = AltoMehran(add);
-        return a.service();
-        
-    }
-}
-
-contract Hino is Truck{
-    function vehicleService(address add) public pure returns (string memory){
-        Hino a = Hino(add);
-        return a.service();
-        
-    } 
-}
-
-contract Yamaha is MotorCycle{
-    function vehicleService(address add) public pure returns (string memory){
-        Yamaha a = Yamaha(add);
+        workshop a = workshop(add);
         return a.service();
         
     }
